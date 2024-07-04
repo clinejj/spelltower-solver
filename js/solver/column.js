@@ -4,7 +4,7 @@
  * https://github.com/stringham/Spell-tower-solver
  * Copyright Ryan Stringham
  */
- Column = function(size, column, board){
+Column = function(size, column, board){
 	this.x = column;
 	this.cells = [];
 	this.board = board;

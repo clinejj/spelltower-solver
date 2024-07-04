@@ -134,7 +134,7 @@ Board.prototype.oneAtATime = function(nonempty,i){
 				return 1;
 			return 0;
 		});
-			
+
 		me.showSolutions();
 		setTimeout(function() {me.unHighlightAll();}, 100);
 		return;
@@ -254,6 +254,10 @@ Board.prototype.showSolutions = function(){
 					createTipsFor(solution);
 				});
 			}
+		}).mouseenter(function(){
+			solution.highlight();
+		}).mouseleave(function(){
+			solution.unHighlight();
 		}).appendTo(solutionDom);
 	});
 }
@@ -348,12 +352,17 @@ Board.prototype.selectSolutions = function(x,y){
 		$('.qtip').qtip('reposition');
 }
 
-Board.prototype.fillRow = function(rowNum, value){
-	var i;
-	for(i = 0; i<this.width && i < value.length; i++){
-		this.cells[i][rowNum].setValue(value[i]);
+Board.prototype.fillRow = function(rowNum, value, done){
+	var me = this;
+	function fill(i){
+		if(i == me.width || i == value.length){
+			done && done(value.substr(i));
+			return;
+		}
+		me.cells[i][rowNum].setValue(value[i]);
+		setTimeout(function() {fill(i+1);}, 0);//1000/(me.width*me.height));
 	}
-	return value.substr(i);
+	fill(0);
 }
 
 Board.prototype.fillPrompt = function(x,y){
@@ -366,19 +375,23 @@ Board.prototype.fillPrompt = function(x,y){
 }
 
 Board.prototype.fillBoard = function(x,y,text){
+	var me = this;
 	if(!text || text.length == 0)
 		return;
-	var remainder = this.fillRow(y, Array(x+1).join(' ') + text);
+	var remainder = this.fillRow(y, Array(x+1).join(' ') + text, fillNext);
 	y++;
-	while(remainder.length > 0 && y < this.height)
-		remainder = this.fillRow(y++, remainder);
+	function fillNext(remainder){
+		if(remainder.length > 0 && y < me.height)
+			me.fillRow(y, remainder, fillNext);
+		y++;
+	}
 }
 
 Board.prototype.getText = function(){
 	var text = '';
-	for(var i=0; i<this.width; i++){
-		for(var j=0; j<this.height; j++){
-			text += this.letters[i][j] ? this.letters[i][j] : ' ';
+	for(var i=0; i<this.height; i++){
+		for(var j=0; j<this.width; j++){
+			text += this.letters[j][i] ? this.letters[j][i] : ' ';
 		}
 	}
 	return text;

@@ -4,7 +4,7 @@
  * https://github.com/stringham/Spell-tower-solver
  * Copyright Ryan Stringham
  */
- 
+
 Cell = function(x, y, column, board){
 	this.dom = $('<div class="cell empty"></div>');
 	this.x = x;

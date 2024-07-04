@@ -4,7 +4,7 @@
  * https://github.com/stringham/Spell-tower-solver
  * Copyright Ryan Stringham
  */
- var cellSize = 40,
+var cellSize = 40,
 dictionaryLength,
 board,
 count;
@@ -14,7 +14,7 @@ var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false );
 var arrayMap = function(a, f) {
 	if(!a)
 		return;
-	
+
 	var aLen = a.length;
 	for(var i = 0; i < aLen; i++) {
 		if(f(a[i], i) == false)
@@ -36,7 +36,7 @@ var createTipsFor = function(clickedSolution){
 			var definition = formatDefinition(solution.word);
 			solution.dom.qtip({
 				content: {
-					text: definition, 
+					text: definition,
 					title: {
 						text: '<span class ="definition-title">' + solution.word.capitalize() + '</span>',
 						button: true
@@ -137,7 +137,7 @@ function resizePrompt(callback)
 			if(e.which == 13)
 				callback( newwidth.val(), newheight.val() );
 		}),
-		ok = $('<button />', { 
+		ok = $('<button />', {
 			text: 'Resize',
 			click: function() { callback( newwidth.val(), newheight.val() ); }
 		}).css({'clear': 'both', 'float':'left'}),
@@ -160,7 +160,7 @@ function fillPrompt(question, callback)
 			if(e.which == 13)
 				callback(value.val());
 		}),
-		ok = $('<button />', { 
+		ok = $('<button />', {
 			text: 'Fill',
 			click: function() { callback(value.val());}
 		}).css('float','left'),
@@ -209,7 +209,7 @@ $('document').ready(function(){
 				$('.boardandoptions').prepend(board.dom);
 				setSize();
 			}
-
+			cells = board.getCells();
 		});
 	});
 
@@ -225,11 +225,11 @@ $('document').ready(function(){
 				$('.boardandoptions').prepend(board.dom);
 				setSize();
 				board.fillBoard(0,0,decoded['t']);
-				setTimeout(function() {board.solve();}, 1500);
+				// setTimeout(function() {board.solve();}, 1500);
 			}
 		} catch(e){}
 	}
-	
+
 });
 
 var init = function(){
@@ -240,7 +240,7 @@ var init = function(){
 			return this.indexOf(str) == 0;
 		};
 	}
-	
+
 	if(typeof String.prototype.capitalize != 'function'){
 		String.prototype.capitalize = function() {
 			return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
@@ -248,7 +248,7 @@ var init = function(){
 	}
 
 	setSize();
-	// setTimeout(setSize, 2000); 
+	// setTimeout(setSize, 2000);
 
 }
 
@@ -377,7 +377,7 @@ var score = function(path){
 		for(i = 0; i<path.length; i++){
 			total += points[path[i].toLowerCase()] || 0;
 		}
-		return total;	
+		return total;
 	}
 
 	var bonus = getBonusCells(path);

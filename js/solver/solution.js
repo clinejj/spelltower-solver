@@ -4,7 +4,7 @@
  * https://github.com/stringham/Spell-tower-solver
  * Copyright Ryan Stringham
  */
- Solution = function(word, path) {
+Solution = function(word, path) {
 	this.word = word;
 	this.path = path;
 	this.score = '';// score(path);
@@ -43,4 +43,3 @@ Solution.prototype.unHighlight = function(){
 	delete this.line;
 	this.isHighlighted = false;
 }
-

@@ -7,7 +7,7 @@
 	border: 1px solid gray;
 	float:left;
 	/*-webkit-border-radius: 6px;
-	border-radius: 6px; 
+	border-radius: 6px;
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;*/
 	cursor: pointer;
 	clear:both;
@@ -28,7 +28,7 @@
 	margin:0;
 	overflow: hidden;
 	-webkit-border-radius: 6px;
-	border-radius: 6px; 
+	border-radius: 6px;
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 	cursor: pointer;
 }
@@ -69,7 +69,7 @@
 	/*opacity: 0.8;*/
 
 	-webkit-border-radius: 5px;
-	border-radius: 5px; 
+	border-radius: 5px;
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 }
 
@@ -182,7 +182,7 @@
 	margin:2px;
 	background: #9fd4d4;
 	-webkit-border-radius: 6px;
-	border-radius: 6px; 
+	border-radius: 6px;
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 	cursor: pointer;
 
@@ -219,7 +219,7 @@
 	z-index: 5;
 	bottom: 20px;
 	-webkit-border-radius: 6px;
-	border-radius: 6px; 
+	border-radius: 6px;
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 	pointer-events: none;
 }
@@ -234,7 +234,7 @@
 }
 
 .vertical {
-	-moz-transform:rotate(90deg); 
+	-moz-transform:rotate(90deg);
 	-moz-transform-origin: bottom left;
 	-webkit-transform: rotate(90deg);
 	-webkit-transform-origin: bottom left;
@@ -244,14 +244,14 @@
 
 .drdiagonal {
     width:70.7106px;
-    -moz-transform:rotate(45deg); 
+    -moz-transform:rotate(45deg);
     -webkit-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }
 
 .dldiagonal {
     width:70.7106px;
-    -moz-transform:rotate(-45deg); 
+    -moz-transform:rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
 }
@@ -259,7 +259,7 @@
 
 .definition {
 	/*border: 1px solid;*/
-	
+
 	-webkit-box-shadow: 0px 0px 6px 0px #000;
     box-shadow: 0px 0px 6px 0px #000;
 
@@ -267,7 +267,7 @@
 
 	padding: 5px;
 	-webkit-border-radius: 6px;
-	border-radius: 6px; 
+	border-radius: 6px;
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 }
 
