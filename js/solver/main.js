@@ -265,12 +265,11 @@ var setSize = function(){
 	var boardWidth = $('.options').width()+15;
 	cellSize = Math.max(Math.min(boardHeight/board.height,boardWidth/board.width)-3,25);
 
-	$('.solutions').css({'left':(board.width*(cellSize+2) + 15) + 'px', 'height':(board.height*(cellSize+2))}).click(function(){board.unHighlightAll(true)});
+	$('.solutions').css({'height':(board.height*(cellSize+2))}).click(function(){board.unHighlightAll(true)});
 	$('.cell').css({'width':cellSize + 'px', 'height':cellSize + 'px'}).children().css({'width':cellSize + 'px', 'height':cellSize + 'px'});
 	$('.cell textarea').css({'font-size':cellSize*.9, '-webkit-border-radius': Math.max(cellSize*.15,6) + 'px', 'border-radius': cellSize*.15 + 'px','width':cellSize + 'px', 'height':cellSize + 'px'});
 	//$('.resize').css({'left':$('.board').width(), 'top':$('.board').height()+$('.board').offset().top});
-	$('.boardandoptions').css({width: $('.options').width()});
-//	console.log(board.cells[board.width-1][0].dom.offset().left);
+	//$('.boardandoptions').css({width: $('.options').width()});
 	$('.board').attr('height',board.height).attr('width',board.width).css({'width':Math.max(board.columns[0].dom.width()*board.width+2,$('.options').width()) + 'px', 'height': board.height*(cellSize + 2) + 'px'});
 	board.solutionHeight = board.height*(cellSize+2);
 }
@@ -366,6 +365,23 @@ var useWord = function(thenSolve){
 	board.removeSelected();
 	if(thenSolve)
 		solve();
+}
+
+var setSixBySix = function(){
+  board.destroy();
+  board = new Board(6,6);
+  $('.boardandoptions').prepend(board.dom);
+  setSize();
+  cells = board.getCells();
+}
+
+
+var setNineByThirteen = function(){
+  board.destroy();
+  board = new Board(9,13);
+  $('.boardandoptions').prepend(board.dom);
+  setSize();
+  cells = board.getCells();
 }
 
 points = {'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10};

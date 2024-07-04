@@ -2,6 +2,11 @@
 	font-family: 'courier new';
 }*/
 
+body{
+	overflow: hidden;
+  background-color: #CDD2D8;
+}
+
 .cell {
 	background: palegoldenrod;
 	border: 1px solid gray;
@@ -11,11 +16,6 @@
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;*/
 	cursor: pointer;
 	clear:both;
-}
-
-
-.body{
-	overflow: hidden;
 }
 
 .cell textarea {
@@ -166,12 +166,19 @@
 	display: none;
 }
 
+.board-solution {
+  max-height: 100%;
+}
+
+.boardandoptions {
+  width: fit-content;
+  float: left;
+  padding-right: 8px;
+}
+
 .solutions {
-	position: absolute;
-	right: 0;
-	top: 10px;
+	width: 50%;
 	overflow: auto;
-	min-width: 250px;
 }
 
 .solution {
