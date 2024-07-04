@@ -141,7 +141,7 @@ Board.prototype.oneAtATime = function(nonempty,i){
 	}
 	count++;
 	$('.solutions').children().remove();
-	console.log($('.solutions').height());
+	//console.log($('.solutions').height());
 	$('.solutions').append('<span class="percent" >' + Math.ceil((100.*count)/(nonempty.length)) + '%</span>');
 	// $('.percent').css('line-height', this.solutionHeight + 'px');
 	setTimeout(function() {
