@@ -270,7 +270,7 @@ var setSize = function(){
 	$('.cell textarea').css({'font-size':cellSize*.9, '-webkit-border-radius': Math.max(cellSize*.15,6) + 'px', 'border-radius': cellSize*.15 + 'px','width':cellSize + 'px', 'height':cellSize + 'px'});
 	//$('.resize').css({'left':$('.board').width(), 'top':$('.board').height()+$('.board').offset().top});
 	//$('.boardandoptions').css({width: $('.options').width()});
-	$('.board').attr('height',board.height).attr('width',board.width).css({'width':Math.max(board.columns[0].dom.width()*board.width+2,$('.options').width()) + 'px', 'height': board.height*(cellSize + 2) + 'px'});
+	$('.board').attr('height',board.height).attr('width',board.width).css({'height': board.height*(cellSize + 2) + 'px'});
 	board.solutionHeight = board.height*(cellSize+2);
 }
 
