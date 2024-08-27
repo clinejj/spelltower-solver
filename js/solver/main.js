@@ -175,7 +175,7 @@ function fillPrompt(question, callback)
 }
 
 $('document').ready(function(){
-	board = new Board(8,16);
+	board = new Board(6,6);
 	cells = board.getCells();
 	$('.boardandoptions').prepend(board.dom);
 	init();
