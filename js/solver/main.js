@@ -368,6 +368,7 @@ var useWord = function(thenSolve){
 }
 
 var setSixBySix = function(){
+  board.clear();
   board.destroy();
   board = new Board(6,6);
   $('.boardandoptions').prepend(board.dom);
@@ -377,6 +378,7 @@ var setSixBySix = function(){
 
 
 var setNineByThirteen = function(){
+  board.clear();
   board.destroy();
   board = new Board(9,13);
   $('.boardandoptions').prepend(board.dom);
